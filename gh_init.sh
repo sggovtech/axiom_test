@@ -9,3 +9,5 @@ if ! command -v gh &> /dev/null; then
     && sudo apt update \
     && sudo apt install gh -y
 fi
+gh auth login
+gh repo create "$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1)"
